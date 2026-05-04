@@ -55,6 +55,7 @@ function LocationMarker({ position, setPosition }: { position: L.LatLng | null, 
 
 export default function MapTool() {
   const [position, setPosition] = useState<L.LatLng | null>(null);
+  const [map, setMap] = useState<L.Map | null>(null);
 
   const defaultCenter: L.LatLngExpression = [51.505, -0.09]; // Default London
 
@@ -62,7 +63,11 @@ export default function MapTool() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
-          setPosition(new L.LatLng(pos.coords.latitude, pos.coords.longitude));
+          const newPos = new L.LatLng(pos.coords.latitude, pos.coords.longitude);
+          setPosition(newPos);
+          if (map) {
+            map.flyTo(newPos, 16); // Auto-zoom to level 16
+          }
         },
         (err) => {
           alert('Error getting location: ' + err.message);
@@ -93,6 +98,7 @@ export default function MapTool() {
               zoom={13} 
               scrollWheelZoom={true}
               className="h-full w-full"
+              ref={setMap}
             >
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
