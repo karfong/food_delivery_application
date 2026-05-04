@@ -1,4 +1,4 @@
-import { Layers, Github, Twitter, Linkedin } from 'lucide-react';
+import { Layers, Globe, MessageCircle, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -16,13 +16,13 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Github className="h-5 w-5" />
+                <Globe className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
+                <MessageCircle className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
+                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>
