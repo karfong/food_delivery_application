@@ -51,7 +51,7 @@ export default function CompressTool() {
     formData.append('quality', quality.toString());
 
     try {
-      const response = await fetch('http://localhost:5000/api/compress', {
+      const response = await fetch('http://localhost:5001/api/compress', {
         method: 'POST',
         body: formData,
       });

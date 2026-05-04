@@ -41,8 +41,7 @@ A full-stack monorepo built with the MERN stack (focusing on Node/Express for th
    ```bash
    node index.js
    ```
-
-### 2. Frontend Setup
+   (Runs on `http://localhost:5001`)
 1. Open a new terminal and navigate to the `client` directory:
    ```bash
    cd client
@@ -58,5 +57,5 @@ A full-stack monorepo built with the MERN stack (focusing on Node/Express for th
 4. Open the provided Local URL (e.g., `http://localhost:5173`) in your browser.
 
 ## Notes
-- Ensure the backend is running before testing the Image Compressor tool, as it relies on `http://localhost:5000/api/compress`.
+- Ensure the backend is running before testing the Image Compressor tool, as it relies on `http://localhost:5001/api/compress`.
 - No database or authentication setup is required as per the specifications. All tools operate in-memory/client-side.
